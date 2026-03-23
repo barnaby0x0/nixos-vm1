@@ -3,7 +3,7 @@
 {
   users.users.victor = {
     isNormalUser = true;
-    description = "Main User";
+    description = "Victor";
     extraGroups = [ "networkmanager" "wheel" ];
     home = "/home/victor";
     packages = with pkgs; [
@@ -11,7 +11,7 @@
   };
   users.users.justine = {
     isNormalUser = true;
-    description = "Main User";
+    description = "Justine";
     extraGroups = [];
     home = "/home/justine";
     packages = with pkgs; [
@@ -19,8 +19,8 @@
   };
   users.users.bob = {
     isNormalUser = true;
-    description = "Main User";
-    extraGroups = [];
+    description = "Bob";
+    extraGroups = ["docker"];
     home = "/home/bob";
     packages = with pkgs; [
     ];
