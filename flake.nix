@@ -21,7 +21,7 @@
 
     homeManagerModule = home-manager.nixosModules.home-manager;
     homeManagerSettings = {
-      users.mutableUsers = false;
+      #users.mutableUsers = false;
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
@@ -42,8 +42,11 @@
         system = "x86_64-linux";
         modules = [
           paths.vm1.host
-          #./hardware-configuration.nix
-          #./configuration.nix
+          homeManagerModule
+          {
+            home-manager.extraSpecialArgs = {};
+          }
+          homeManagerSettings
         ];
       };
         #k8 = lib.nixosSystem {
