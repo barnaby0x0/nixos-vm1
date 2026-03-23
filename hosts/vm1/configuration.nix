@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+#      ./hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -137,6 +137,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.allowed-users = [ "root" "victor" ];
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }

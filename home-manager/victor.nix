@@ -3,6 +3,9 @@
   home.homeDirectory = "/home/victor";
   home.packages = [
     pkgs.btop 
+    pkgs.wget 
+    pkgs.netcat-openbsd
+    pkgs.htop
   ];
   programs.vim = {
     enable = true;

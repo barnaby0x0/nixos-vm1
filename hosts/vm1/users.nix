@@ -18,4 +18,5 @@
     ];
   };  
   home-manager.users.victor = import ../../home-manager/victor.nix; 
+  home-manager.users.justine = import ../../home-manager/justine.nix; 
 }
