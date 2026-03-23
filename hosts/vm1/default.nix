@@ -6,6 +6,7 @@
       ./configuration.nix
       ./docker.nix
       ./users.nix
+      ./disko-config.nix
       ./hardware-configuration.nix
     ];
 
