@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports =
@@ -100,6 +100,14 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  programs.hyprland = {
+    enable = true;
+    # set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -137,7 +145,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.allowed-users = [ "root" "victor" "bob" ];
+  nix.settings.allowed-users = [ "root" "victor" "justine" ];
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }

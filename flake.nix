@@ -7,9 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: 
+  outputs = { self, nixpkgs, home-manager, hyprland, ... } @inputs: 
   let
     lib = nixpkgs.lib;
 
@@ -40,6 +41,7 @@
     nixosConfigurations = {
       vm1 = lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           paths.vm1.host
           homeManagerModule

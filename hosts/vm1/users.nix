@@ -12,7 +12,7 @@
   users.users.justine = {
     isNormalUser = true;
     description = "Justine";
-    extraGroups = [];
+    extraGroups = [ "networkmanager" "wheel" ];
     home = "/home/justine";
     packages = with pkgs; [
     ];
@@ -26,4 +26,5 @@
     ];
   };  
   home-manager.users.victor = import ../../home-manager/victor.nix; 
+  home-manager.users.justine = import ../../home-manager/justine.nix; 
 }
