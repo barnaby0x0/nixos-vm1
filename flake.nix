@@ -3,15 +3,61 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs }: {
-    nixosConfigurations.vm1 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hardware-configuration.nix
-        ./configuration.nix
-      ];
+  outputs = { self, nixpkgs, home-manager, ... }: 
+  let
+    lib = nixpkgs.lib;
+
+    paths = {
+      vm1 = { 
+        host = "${self}/hosts/vm1"; 
+      };
+    };
+
+    homeManagerModule = home-manager.nixosModules.home-manager;
+    homeManagerSettings = {
+      users.mutableUsers = false;
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+      };
+    };
+
+  in {
+      #nixosConfigurations.vm1 = nixpkgs.lib.nixosSystem {
+      #  system = "x86_64-linux";
+      #  modules = [
+      #    ./hardware-configuration.nix
+      #    ./configuration.nix
+      #  ];
+      #};
+
+    nixosConfigurations = {
+      vm1 = lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          paths.vm1.host
+          #./hardware-configuration.nix
+          #./configuration.nix
+        ];
+      };
+        #k8 = lib.nixosSystem {
+        #  system = "x86_64-linux";
+	      #  modules = [
+        #    paths.k8.host
+        #    #ax-shell.homeManagerModules.default
+        #    homeManagerModule
+        #    {
+        #      home-manager.extraSpecialArgs = {};
+        #    }
+        #    homeManagerSettings
+        #  ];
+        #};
     };
   };
 }
