@@ -16,7 +16,14 @@
     home = "/home/justine";
     packages = with pkgs; [
     ];
+  };
+  users.users.bob = {
+    isNormalUser = true;
+    description = "Main User";
+    extraGroups = [];
+    home = "/home/bob";
+    packages = with pkgs; [
+    ];
   };  
   home-manager.users.victor = import ../../home-manager/victor.nix; 
-  home-manager.users.justine = import ../../home-manager/justine.nix; 
 }

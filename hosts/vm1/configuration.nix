@@ -137,7 +137,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.allowed-users = [ "root" "victor" ];
+  nix.settings.allowed-users = [ "root" "victor" "bob" ];
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
