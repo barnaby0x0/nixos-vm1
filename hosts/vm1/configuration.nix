@@ -147,6 +147,9 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.allowed-users = [ "root" "victor" "justine" ];
+
+  nix.settings.max-jobs = 1; # for installation
+
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
