@@ -5,11 +5,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-#      ./hardware-configuration.nix
-        # ./hyprland.nix
-    ];
+  imports = [];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -22,12 +18,8 @@
 
 
  hardware = {
-    # bluetooth.enable = true;
-
 	opengl = {
 		enable = true;
-		# driSupport = true;
-		# driSupport32Bit = true;
 	};
  };
 
@@ -62,17 +54,17 @@
 
 
   # programs.xwayland.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   wayland.enable = true;
+  # };
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
   # # Enable the XFCE Desktop Environment.
   # services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  # services.xserver.desktopManager.xfce.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
