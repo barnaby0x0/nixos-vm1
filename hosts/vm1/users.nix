@@ -5,6 +5,7 @@
     isNormalUser = true;
     description = "Victor";
     extraGroups = [ "networkmanager" "wheel" ];
+    hashedPassword = "$6$X9Nl4WYPme3seZR.$kJP0Vph04KYU1BkSr.I4wBUklUIAJLTs5yhZqqwNkYxpazYweRmEFvyKkseBFdI2stzG6PrzLR/8kxyeb6yfO1";
     home = "/home/victor";
     packages = with pkgs; [
     ];
