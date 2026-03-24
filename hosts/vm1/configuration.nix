@@ -67,19 +67,16 @@
   # services.xserver.desktopManager.xfce.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "fr";
-    variant = "azerty";
-  };
+
 
   # Configure console keymap
   console.keyMap = "fr";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  # services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   #services.pipewire = {
   #  enable = true;
@@ -95,8 +92,7 @@
   #};
 
 
-  services.spice-vdagentd.enable = true;
-  services.qemuGuest.enable = true;
+
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
