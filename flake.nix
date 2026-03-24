@@ -14,7 +14,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, disko, ... } @inputs: 
+  outputs = { self, nixpkgs, home-manager, disko, ... } @inputs: 
   let
     lib = nixpkgs.lib;
 
