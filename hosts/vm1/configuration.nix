@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
 #      ./hardware-configuration.nix
-        ./hyprland.nix
+        # ./hyprland.nix
     ];
 
   # Bootloader.
@@ -19,6 +19,18 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+
+ hardware = {
+    bluetooth.enable = true;
+
+	opengl = {
+		enable = true;
+		driSupport = true;
+		driSupport32Bit = true;
+	};
+ };
+
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -49,7 +61,7 @@
   };
 
 
-  programs.xwayland.enable = true;
+  # programs.xwayland.enable = true;
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
@@ -107,7 +119,7 @@
   #};
 
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
