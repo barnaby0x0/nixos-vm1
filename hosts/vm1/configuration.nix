@@ -66,6 +66,16 @@
 
   # Configure keymap in X11
 
+	services.xserver = {
+		  enable = true;
+      layout = "fr";
+      xkb = {
+        layout = "fr";
+        variant = "azerty";
+      };
+    };
+
+
 
   # Configure console keymap
   console.keyMap = "fr";
