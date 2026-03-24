@@ -15,6 +15,7 @@
 
 	  xserver = {
 		  enable = true;
+      layout = "fr";
       xkb = {
         layout = "fr";
         variant = "azerty";
