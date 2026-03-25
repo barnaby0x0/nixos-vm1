@@ -8,5 +8,6 @@
         ./docker.nix
         ./users.nix
         ./hyprland.nix
+        ./fonts.nix
     ];
 }
