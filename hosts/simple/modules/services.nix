@@ -19,10 +19,10 @@
 	  xserver = {
 		  enable = true;
       layout = "us";
-      xkb = {
-        layout = "fr";
-        variant = "azerty";
-      };
+      # xkb = {
+      #   layout = "fr";
+      #   variant = "azerty";
+      # };
     };
   };
 }
