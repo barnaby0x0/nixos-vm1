@@ -5,7 +5,8 @@
     font-awesome            # Version plus récente (6 ou 7)
     # Alternative plus légère pour les symbols seulement :
     # (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
     liberation_ttf
   ];
 }
