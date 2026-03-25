@@ -89,6 +89,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  environment.systemPackages = with pkgs; [
+    git
+    home-manager
+    vim
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 

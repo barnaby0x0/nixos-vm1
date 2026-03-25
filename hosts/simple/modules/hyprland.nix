@@ -3,9 +3,6 @@
 {
 
   environment.systemPackages = with pkgs; [
-    git
-    home-manager
-    vim
     hyprpaper
     kitty
     libnotify

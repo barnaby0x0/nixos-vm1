@@ -7,5 +7,6 @@
         ./services.nix
         ./docker.nix
         ./users.nix
+        ./hyprland.nix
     ];
 }
