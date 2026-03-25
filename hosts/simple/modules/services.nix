@@ -16,14 +16,14 @@
     #   wayland.enable = true;
     # };
 
-	  # xserver = {
-		#   enable = true;
-    #   layout = "fr";
-    #   xkb = {
-    #     layout = "fr";
-    #     variant = "azerty";
-    #   };
-    # };
+	  xserver = {
+		  enable = true;
+      layout = "us";
+      xkb = {
+        layout = "fr";
+        variant = "azerty";
+      };
+    };
   };
 }
 
