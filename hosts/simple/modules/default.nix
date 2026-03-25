@@ -3,7 +3,7 @@
 {
     imports = [
         ./boot.nix
-        ./programs.nix
+        # ./programs.nix
         ./services.nix
         ./docker.nix
     ];
