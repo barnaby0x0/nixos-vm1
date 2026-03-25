@@ -15,6 +15,10 @@
     wl-clipboard
     wofi
     waybar
+    nerd-fonts
+    #noto-fonts
+    #noto-fonts-cjk-sans
+    #noto-fonts-color-emoji
   ];
 
 }
