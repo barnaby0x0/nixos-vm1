@@ -3,8 +3,8 @@
 {
   services = {
 
-    xserver.displayManager.lightdm.enable = true;
-    xserver.desktopManager.xfce.enable = true;
+    # xserver.displayManager.lightdm.enable = true;
+    # xserver.desktopManager.xfce.enable = true;
   	dbus.enable = true;
 	  picom.enable = true;
 	  openssh.enable = true;
