@@ -14,6 +14,7 @@
 
   programs = {
     firefox.enable = true;
+    # xwayland.enable = true;
     hyprland = {
         enable = true;
         xwayland.enable = true;
