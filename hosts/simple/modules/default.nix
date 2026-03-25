@@ -6,5 +6,6 @@
         # ./programs.nix
         ./services.nix
         ./docker.nix
+        ./users.nix
     ];
 }
