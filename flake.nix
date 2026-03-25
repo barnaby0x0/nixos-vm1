@@ -63,7 +63,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          paths.vps.host
+          paths.simple.host
           disko.nixosModules.disko
           homeManagerModule
           {
