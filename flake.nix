@@ -22,8 +22,8 @@
       vm1 = { 
         host = "${self}/hosts/vm1"; 
       };
-      vps = { 
-        host = "${self}/hosts/vps"; 
+      simple = { 
+        host = "${self}/hosts/simple"; 
       };      
     };
 
@@ -59,7 +59,7 @@
           homeManagerSettings
         ];
       };
-      vps = lib.nixosSystem {
+      simple = lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -71,19 +71,7 @@
           }
           homeManagerSettings
         ];
-      };      
-        #k8 = lib.nixosSystem {
-        #  system = "x86_64-linux";
-	      #  modules = [
-        #    paths.k8.host
-        #    #ax-shell.homeManagerModules.default
-        #    homeManagerModule
-        #    {
-        #      home-manager.extraSpecialArgs = {};
-        #    }
-        #    homeManagerSettings
-        #  ];
-        #};
+      };
     };
   };
 }
