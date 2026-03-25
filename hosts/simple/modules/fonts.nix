@@ -6,7 +6,7 @@
     nerdfonts               # Ou mieux, seulement les symbols si tu veux économiser
     # Alternative plus légère pour les symbols seulement :
     # (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-    noto-fonts
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
     liberation_ttf
   ];
 }
