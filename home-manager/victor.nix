@@ -14,10 +14,10 @@
   #   };
   # };
 
-  # home.file.".config/home-manager" = {
-  #   source = config.lib.file.mkOutOfStoreSymlink "./../home-manager";
-  #   recursive = true;        # important
-  # };
+  home.file.".config/home-manager" = {
+    source = config.lib.file.mkOutOfStoreSymlink "./../home-manager";
+    recursive = true;        # important
+  };
 
   programs.vim = {
     enable = true;
