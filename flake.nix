@@ -16,6 +16,8 @@
 
   outputs = { self, nixpkgs, home-manager, disko, ... } @inputs: 
   let
+
+    username = "victor"
     lib = nixpkgs.lib;
 
     paths = {
@@ -48,7 +50,7 @@
     nixosConfigurations = {
       vm1 = lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; username; };
         modules = [
           paths.vm1.host
           disko.nixosModules.disko
