@@ -29,15 +29,16 @@
   home-manager.users.victor = import ../../../home-manager/victor.nix; 
   home-manager.users.justine = import ../../../home-manager/justine.nix;
 
-    system.activationScripts = {
-    link_home_manager_victor = {
-      deps = [ "users" ];
 
-      text = ''
-        mkdir -p /home/victor/.config/home-manager
-        ln -sf /home/victor/nixos-vm1/home-manager/victor.nix /home/victor/.config/home-manager/home.nix
-      '';
-    };
+  #   system.activationScripts = {
+  #   link_home_manager_victor = {
+  #     deps = [ "users" ];
 
-  };
+  #     text = ''
+  #       mkdir -p /home/victor/.config/home-manager
+  #       ln -sf /home/victor/nixos-vm1/home-manager/victor.nix /home/victor/.config/home-manager/home.nix
+  #     '';
+  #   };
+
+  # };
 }
