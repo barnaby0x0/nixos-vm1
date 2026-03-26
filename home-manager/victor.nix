@@ -8,16 +8,11 @@
     pkgs.htop
   ];
 
-  home.file = {
-    ".config/hypr/hyprland.conf" = {
-      source = config.lib.file.mkOutOfStoreSymlink ../dotfiles/hypr/hyprland.conf;
-    };
-  };
-
-# home.file."path/to/example" = { 
-#      recursive = true; 
-#      source = inputs.ExampleFlake.directory;
-# }
+  # home.file = {
+  #   ".config/hypr/hyprland.conf" = {
+  #     source = config.lib.file.mkOutOfStoreSymlink ../dotfiles/hypr/hyprland.conf;
+  #   };
+  # };
 
   programs.vim = {
     enable = true;
