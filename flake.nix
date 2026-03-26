@@ -21,7 +21,7 @@
     homeManagerUsers = [
       "victor"
       "justine"
-    ]
+    ];
     lib = nixpkgs.lib;
 
     paths = {
