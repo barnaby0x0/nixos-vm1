@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, username, myList, ... }:
+{ config, pkgs, lib,self, username, myList, ... }:
 
 {
   imports = [];
@@ -147,6 +147,7 @@
         ${pkgs.curl}/bin/curl -s -I "${item}" | head -n 1 >> "$LOGFILE" || echo "Échec pour ${item}" >> "$LOGFILE"
         '') myList}
         echo "=== Fin de la boucle ===" >> "$LOGFILE"
+        echo "Chemin du flake : ${self}" >> "$LOGFILE"
 
       '';
     };

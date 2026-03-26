@@ -69,7 +69,7 @@
       };
       simple = lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs username myList; };
+        specialArgs = { inherit inputs self username myList; };
         modules = [
           paths.simple.host
           disko.nixosModules.disko
