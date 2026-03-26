@@ -95,6 +95,17 @@
     vim
   ];
 
+  environment.systemPackages = with pkgs; [
+    (writeShellScriptBin "monscript" ''
+      #!${pkgs.bash}/bin/bash
+      echo "Hello from NixOS script!"
+      echo "Utilisateur : $USER"
+      echo "Hostname : $(hostname)"
+      # Ajoute ici tes commandes
+    '')
+  ];
+
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
