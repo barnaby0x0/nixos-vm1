@@ -3,7 +3,7 @@
 {
 
   environment.systemPackages = with pkgs; [
-    # hyprpaper
+    hyprpaper
     swww
     kitty
     libnotify
