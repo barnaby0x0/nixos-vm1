@@ -15,6 +15,7 @@
     wlogout
     wl-clipboard
     wofi
+    wofi-power-menu.inputs.self.packages.${pkgs.system}.default
     waybar
     dunst
     kdePackages.dolphin

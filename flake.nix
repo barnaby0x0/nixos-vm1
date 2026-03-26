@@ -12,6 +12,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
+    
+    wofi-power-menu = {
+      url = "github:szaffarano/wofi-power-menu";
+      inputs.nixpkgs.follows = "nixpkgs";   # important pour éviter les doublons
+    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, disko, ... } @inputs: 
