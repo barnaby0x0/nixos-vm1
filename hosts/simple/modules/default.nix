@@ -9,5 +9,6 @@
         ./users.nix
         ./hyprland.nix
         ./fonts.nix
+        ./custom.nix
     ];
 }
