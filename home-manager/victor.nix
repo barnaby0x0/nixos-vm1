@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{ pkgs, config, ...}: {
   home.username = "victor";
   home.homeDirectory = "/home/victor";
   home.packages = [
@@ -13,6 +13,11 @@
       source = config.lib.file.mkOutOfStoreSymlink ../dotfiles/hypr/hyprland.conf;
     };
   };
+
+# home.file."path/to/example" = { 
+#      recursive = true; 
+#      source = inputs.ExampleFlake.directory;
+# }
 
   programs.vim = {
     enable = true;
