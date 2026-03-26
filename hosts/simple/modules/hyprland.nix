@@ -15,6 +15,7 @@
     wl-clipboard
     wofi
     waybar
+    dunst
   ];
 
 }
