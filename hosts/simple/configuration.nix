@@ -129,10 +129,8 @@
   nix.settings.allowed-users = [ "root" "victor" "justine" ];
 
   system.activationScripts = {
-    # Nom de ton script (doit être unique)
-    monScriptPerso = {
-      # Dépendances optionnelles (ex: pour que ça tourne après la création des users)
-      deps = [ "users" ];   # tu peux en ajouter d'autres si besoin
+    monScriptPerso = { # Must be uniq
+      deps = [ "users" ]; # wait for deps
 
       text = ''
         echo "Date : $(date)" >> /home/victor/log
@@ -141,6 +139,15 @@
         ${pkgs.curl}/bin/curl ifconfig.co >> /home/victor/log
       '';
     };
+
+    link_home_manager_configs = {
+      deps = [ "users" ];
+
+      text = ''
+        ln -s /home/victor/nixos-vm1/home-manager/victor.nix /home/victor/.config/home-manager/home.nix
+      '';
+    };
+
   };
 
   system.stateVersion = "25.11"; # Did you read the comment?
