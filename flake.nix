@@ -17,7 +17,7 @@
   outputs = { self, nixpkgs, home-manager, disko, ... } @inputs: 
   let
 
-    username = "victor"
+    username = "victor";
     lib = nixpkgs.lib;
 
     paths = {
