@@ -9,5 +9,15 @@
       echo "Hostname : $(hostname)"
       # Ajoute ici tes commandes
     '')
+
+    (writeShellApplication {
+      name = "monscript2";
+      runtimeInputs = with pkgs; [ curl ];
+      text = ''
+        echo "Début du script"
+        curl ifconfig.co
+      '';
+    })
+
   ];
 }
