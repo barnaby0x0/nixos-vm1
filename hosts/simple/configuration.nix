@@ -152,14 +152,14 @@
       '';
     };
 
-    link_home_manager_configs = {
-      deps = [ "users" ];
+    # link_home_manager_configs = {
+    #   deps = [ "users" ];
 
-      text = ''
-        mkdir -p /home/victor/.config/home-manager
-        ln -sf /home/victor/nixos-vm1/home-manager/victor.nix /home/victor/.config/home-manager/home.nix
-      '';
-    };
+    #   text = ''
+    #     mkdir -p /home/victor/.config/home-manager
+    #     ln -sf /home/victor/nixos-vm1/home-manager/victor.nix /home/victor/.config/home-manager/home.nix
+    #   '';
+    # };
 
   };
 
