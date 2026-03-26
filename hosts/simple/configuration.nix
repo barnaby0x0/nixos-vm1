@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, username, ... }:
+{ config, pkgs, lib, username, myList, ... }:
 
 {
   imports = [];
@@ -133,11 +133,21 @@
       deps = [ "users" ]; # wait for deps
 
       text = ''
-        echo "Date : $(date)" >> /home/victor/log
-        echo "Utilisateur : $USER" >> /home/victor/log
-        echo "Hostname : $(${pkgs.hostname}/bin/hostname)" >> /home/victor/log
-        echo "Username ${username}" >> /home/victor/log
-        ${pkgs.curl}/bin/curl ifconfig.co >> /home/victor/log
+        LOGFILE="/home/${username}/log-nixos.txt"
+        echo "Date : $(date)" >> "$LOGFILE"
+        echo "Utilisateur : $USER" >> "$LOGFILE"
+        echo "Hostname : $(${pkgs.hostname}/bin/hostname)" >> "$LOGFILE"
+        echo "Username ${username}" >> "$LOGFILE"
+        ${pkgs.curl}/bin/curl ifconfig.co >> "$LOGFILE"
+
+        echo "=== Boucle sur ma liste ===" >> "$LOGFILE"
+        ${lib.concatMapStringsSep "\n" (item: ''
+        echo "→ Traitement de : ${item}" >> "$LOGFILE"
+        # Exemple : ping ou curl
+        ${pkgs.curl}/bin/curl -s -I "${item}" | head -n 1 >> "$LOGFILE" || echo "Échec pour ${item}" >> "$LOGFILE"
+        '') myList}
+        echo "=== Fin de la boucle ===" >> "$LOGFILE"
+
       '';
     };
 
