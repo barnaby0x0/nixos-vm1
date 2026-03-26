@@ -151,7 +151,6 @@
 
       text = ''
         ${lib.concatMapStringsSep "\n" (item: ''
-          echo "→ Traitement de : ${item}" >> "$LOGFILE"
           mkdir -p /home/${item}/.config/home-manager
           ln -sf /etc/nixos/home-manager/${item}.nix /home/${item}/.config/home-manager/home.nix
         '') homeManagerUsers}        
