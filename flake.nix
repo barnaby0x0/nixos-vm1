@@ -18,12 +18,10 @@
   let
 
     username = "victor";
-    myList = [
-      "https://example.com"
-      "https://google.com"
-      "https://nixos.org"
-      "192.168.1.1"
-    ];
+    homeManagerUsers = [
+      "victor"
+      "justine"
+    ]
     lib = nixpkgs.lib;
 
     paths = {
@@ -69,7 +67,7 @@
       };
       simple = lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs self username myList; };
+        specialArgs = { inherit inputs self username homeManagerUsers; };
         modules = [
           paths.simple.host
           disko.nixosModules.disko

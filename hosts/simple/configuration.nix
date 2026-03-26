@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib,self, username, myList, ... }:
+{ config, pkgs, lib,self, username, homeManagerUsers, ... }:
 
 {
   imports = [];
@@ -140,26 +140,23 @@
         echo "Username ${username}" >> "$LOGFILE"
         ${pkgs.curl}/bin/curl ifconfig.co >> "$LOGFILE"
 
-        echo "=== Boucle sur ma liste ===" >> "$LOGFILE"
-        ${lib.concatMapStringsSep "\n" (item: ''
-        echo "→ Traitement de : ${item}" >> "$LOGFILE"
-        # Exemple : ping ou curl
-        ${pkgs.curl}/bin/curl -s -I "${item}" | head -n 1 >> "$LOGFILE" || echo "Échec pour ${item}" >> "$LOGFILE"
-        '') myList}
         echo "=== Fin de la boucle ===" >> "$LOGFILE"
         echo "Chemin du flake : ${self}" >> "$LOGFILE"
 
       '';
     };
 
-    # link_home_manager_configs = {
-    #   deps = [ "users" ];
+    link_home_manager_configs = {
+      deps = [ "users" ];
 
-    #   text = ''
-    #     mkdir -p /home/victor/.config/home-manager
-    #     ln -sf /home/victor/nixos-vm1/home-manager/victor.nix /home/victor/.config/home-manager/home.nix
-    #   '';
-    # };
+      text = ''
+        ${lib.concatMapStringsSep "\n" (item: ''
+          echo "→ Traitement de : ${item}" >> "$LOGFILE"
+          mkdir -p /home/${item}/.config/home-manager
+          ln -sf /etc/nixos/home-manager/${item}.nix /home/${item}/.config/home-manager/home.nix
+        '') homeManagerUsers}        
+      '';
+    };
 
   };
 

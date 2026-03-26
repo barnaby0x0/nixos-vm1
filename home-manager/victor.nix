@@ -14,12 +14,7 @@
   #   };
   # };
 
-  home.file.".config/home-manager" = {
-    source = config.lib.file.mkOutOfStoreSymlink "./../home-manager";
-    recursive = true;        # important
-  };
-
-  programs.vim = {
+   programs.vim = {
     enable = true;
     defaultEditor = true;
     #plugins = with pkgs.vimPlugins; [ "jamessan/vim-gnupg" ];
