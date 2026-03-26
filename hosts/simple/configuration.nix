@@ -146,7 +146,7 @@
 
       text = ''
         mkdir -p /home/victor/.config/home-manager
-        ln -s /home/victor/nixos-vm1/home-manager/victor.nix /home/victor/.config/home-manager/home.nix
+        ln -sf /home/victor/nixos-vm1/home-manager/victor.nix /home/victor/.config/home-manager/home.nix
       '';
     };
 
