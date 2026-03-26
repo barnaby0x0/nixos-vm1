@@ -8,6 +8,7 @@
         ./docker.nix
         ./users.nix
         ./hyprland.nix
+        ./hypr_waybar.nix
         ./fonts.nix
         ./custom.nix
     ];
