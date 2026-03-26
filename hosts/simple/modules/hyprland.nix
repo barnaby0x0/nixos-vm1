@@ -20,11 +20,12 @@
     dunst
     kdePackages.dolphin
     matugen
-    # waybar mechabar deps
     bluez-tools
     brightnessctl
     fzf
     networkmanager
+    mpd
+    mpc
   ];
 
 }
