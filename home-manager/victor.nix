@@ -7,6 +7,13 @@
     pkgs.netcat-openbsd
     pkgs.htop
   ];
+
+  home.file = {
+    ".config/test.conf" = {
+      source = config.lib.file.mkOutOfStoreSymlink ../dotfiles/hypr/hyprland.conf;
+    };
+  }
+
   programs.vim = {
     enable = true;
     defaultEditor = true;
