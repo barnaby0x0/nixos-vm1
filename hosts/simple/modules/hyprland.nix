@@ -17,7 +17,7 @@
     wofi
     waybar
     dunst
-    dolhpin
+    dolphin
   ];
 
 }
