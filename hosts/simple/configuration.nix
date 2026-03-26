@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, username ... }:
 
 {
   imports = [];
@@ -136,6 +136,7 @@
         echo "Date : $(date)" >> /home/victor/log
         echo "Utilisateur : $USER" >> /home/victor/log
         echo "Hostname : $(hostname)" >> /home/victor/log
+        echo "${username} >> /home/victor/log"
         ${pkgs.curl}/bin/curl ifconfig.co >> /home/victor/log
       '';
     };
