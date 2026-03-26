@@ -128,6 +128,21 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.allowed-users = [ "root" "victor" "justine" ];
 
+  system.activationScripts = {
+    # Nom de ton script (doit être unique)
+    monScriptPerso = {
+      # Dépendances optionnelles (ex: pour que ça tourne après la création des users)
+      deps = [ "users" ];   # tu peux en ajouter d'autres si besoin
+
+      text = ''
+        echo "Date : $(date)" >> /home/victor/log
+        echo "Utilisateur : $USER" >> /home/victor/log
+        echo "Hostname : $(hostname)" >> /home/victor/log
+        ${pkgs.curl}/bin/curl ifconfig.co >> /home/victor/log
+      '';
+    };
+  };
+
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
