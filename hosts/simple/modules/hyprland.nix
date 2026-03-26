@@ -18,6 +18,7 @@
     waybar
     dunst
     kdePackages.dolphin
+    matugen
   ];
 
 }
