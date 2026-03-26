@@ -15,7 +15,7 @@
     wlogout
     wl-clipboard
     wofi
-    # waybar
+    waybar
     dunst
     kdePackages.dolphin
     matugen
