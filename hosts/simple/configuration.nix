@@ -135,7 +135,7 @@
       text = ''
         echo "Date : $(date)" >> /home/victor/log
         echo "Utilisateur : $USER" >> /home/victor/log
-        echo "Hostname : $(hostname)" >> /home/victor/log
+        echo "Hostname : $(${pkgs.curl})" >> /home/victor/log
         echo "Username ${username} >> /home/victor/log"
         ${pkgs.curl}/bin/curl ifconfig.co >> /home/victor/log
       '';
