@@ -14,7 +14,7 @@
       name = "monscript2";
       runtimeInputs = with pkgs; [ curl ];
       text = ''
-        echo "Début du script"
+        echo "Public Ip:"
         curl ifconfig.co
       '';
     })
