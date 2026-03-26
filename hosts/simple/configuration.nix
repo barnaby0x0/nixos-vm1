@@ -93,6 +93,7 @@
     git
     home-manager
     vim
+    tmux
   ];
 
   environment.systemPackages = with pkgs; [
