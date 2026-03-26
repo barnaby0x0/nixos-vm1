@@ -9,7 +9,7 @@
   ];
 
   home.file = {
-    ".config/hypr/shyprland.conf" = {
+    ".config/hypr/hyprland.conf" = {
       source = config.lib.file.mkOutOfStoreSymlink ../dotfiles/hypr/hyprland.conf;
     };
   };
